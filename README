@@ -1,0 +1,21 @@
+BostonPHP Framework Bakeoff 2011
+
+Welcome! This is the code generated for the "Framework Bakeoff" - a BostonPHP meetup event held on February 22nd, 2011 at the Microsoft NERD Center in Cambridge MA.
+
+This code was written in front of a live audience 
+
+The following frameworks are presented:
+
+*CakePHP (Andrew Drane) 
+CakePHP is an open source web application framework for producing web applications. It is written in PHP, modeled after the concepts of Ruby on Rails, and distributed under the MIT License. 
+
+* Symfony (Chhean Saur) 
+Symfony is a web application framework written in PHP which follows the model-view-controller (MVC) paradigm. Released under the MIT license, Symfony is free software. 
+
+* Zend Framework (ZF) (Quyen Do Nguyen) 
+Zend Framework is an open source, object-oriented web application framework implemented in PHP 5 and licensed under the New BSD License. 
+
+* CodeIgniter (Ed Roppie) 
+CodeIgniter is an open source web application framework for use in building dynamic web sites with PHP. "Its goal is to enable developers to develop projects much faster than...writing code from scratch, by providing a rich set of libraries for commonly needed tasks, as well as a simple interface and logical structure to access these libraries.
+
+
