@@ -1,0 +1,13 @@
+<?php echo $this->doctype() ?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Boston PHP Job Board</title>
+		<link rel="stylesheet" type="text/css" href="<?= $this->baseUrl().'/css/site.css' ?>" />
+		<script type="text/javascript" src="<?= $this->baseUrl(). '/js/script.js' ?>"></script>
+	</head>
+	<body>
+		<input id="search_box" class="placeholder_text" type="text" value="search jobs" />
+		<h1>Boston PHP Job Board</h1>
+		<?php echo $this->layout()->content; ?>
+	</body>
+</html>

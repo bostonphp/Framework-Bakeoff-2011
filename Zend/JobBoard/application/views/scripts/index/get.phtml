@@ -1,0 +1,15 @@
+<p><a href="/">Home</a> &gt; <span>Job profile</span></p>
+
+<div id="short_profile" class="soft_background">
+	<form method="post" action="mailto:<?php echo $this->escape($this->job['name']) ?>%20%3c<?php echo $this->escape($this->job['email']) ?>%3e?Subject=Re: <?php echo $this->escape($this->job['title']) ?>&body=I am interested in the job posting I saw on the Boston PHP Job Board...%0A%0Ahttp://jobs.bostonphp.org">
+		<input id="apply_action" type="submit" value="Apply" />
+	</form>
+	<h2><?php echo $this->escape($this->job['title']) ?></h2>
+	<p><span class="profile_label">Posted by</span>: <a href="mailto:<?php echo $this->escape($this->job['email']) ?>"><?php echo $this->escape($this->job['name']) ?></a> of <span id="company_name"><?php echo $this->escape($this->job['company']) ?></span> on May 25th, 2010</p>
+	<p id="short_description"><?php echo $this->escape($this->job['reason']) ?></p>
+	<p><span class="profile_label">Skills:</span> <span id="skill_list"><?php echo $this->escape($this->job['skills']) ?></span></p>
+</div>
+<div id="full_profile">
+	<h3>Full job profile:</h3>
+	<p><?php echo $this->escape($this->job['description']) ?></p>
+</div>

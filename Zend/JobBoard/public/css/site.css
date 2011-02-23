@@ -1,0 +1,142 @@
+/*
+ * Common stuff
+ */
+
+div {
+	padding-top: 10px;
+}
+
+fieldset, .soft_background {
+	background-color: #CCCCCC;
+	padding: 5px;
+}
+
+.light_gray_background {
+	background-color: #EEEEEE;
+}
+
+label, legend {
+	font-weight: bold;
+}
+
+#page_head{
+	background-color: #FFFF99;
+	padding: 7px;
+}
+
+#jobs_table{
+	margin-top: 20px;
+}	
+
+.placeholder_text {
+	color: #BBBBBB;
+}
+
+.placeholder_text:focus {
+	color: #000000;
+}
+
+#search_box {
+	float: right;
+	margin-top: 13px;
+	padding-left: 20px;
+	background-image: url('/search_glass.gif');
+	background-repeat: no-repeat;
+	-webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px;
+}
+
+/*
+ * Jobs list page
+ */
+
+table, th, td {
+	border: 2px solid #000000;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+th, td {
+	padding: 10px;
+}
+
+th {
+	font-weight: bold;
+	text-align: left;
+}
+
+td.job_column {
+	width: 70%;
+}
+
+td.skills_column {
+	width: 30%;
+}
+
+/*
+ * Job profile page
+ */
+
+#apply_action {
+	float: right;
+}
+
+#short_description {
+	font-weight: bold;
+}
+
+.profile_label {
+	font-weight: bold;
+}
+
+/*
+ * Post job page
+ */
+#your_info {
+	display: table;
+}
+
+.your_info_row {
+	display: table-row;
+}
+
+.your_info_row input {
+	display: table-cell;
+	margin: 5px;
+}
+
+#job_type_and_skill {
+	padding: 15px 10px 10px 50px;
+}
+
+#job_type {
+	width: 160px;
+}
+
+#job_skills {
+	width: 220px;
+	margin-left: 20px;
+}
+
+#job_texts {
+	clear: both;
+}
+
+#approval_button {
+	display: block;
+	float: right;
+}
+
+#job_title, #job_reason {
+	margin-bottom: 10px;	
+}
+
+textarea {
+	width: 100%;
+}
+
+.success_message{
+	color: blue;
+	padding: 10px;
+}

@@ -1,0 +1,51 @@
+<?php 
+	$this->title = "Post a Job";
+	$this->headTitle($this->title);
+?>
+
+<p><a href="/">Home</a> &gt; <span>Post a job</span></p>
+
+<form method="post">
+	<fieldset id="your_info">
+		<legend>Your information</legend>
+		<div class="your_info_row">
+			<input class="placeholder_text" id="name" name="name" type="text" value="Your name" />&nbsp;<input class="placeholder_text" id="company" name="company" type="text" value="Your company" />
+		</div>
+		<div class="your_info_row">
+			<input class="placeholder_text" id="email" name="email" type="text" value="Your email" />&nbsp;<input class="placeholder_text" id="location" name="location" type="text" value="Company's location" />
+		</div>
+	</fieldset>
+	<br/>
+	<fieldset>
+		<legend>Job info</legend>
+		<div id="job_type_and_skill">
+			<select id="type" name="type">
+				<option value="select_label">Select job type...</option>
+				<option value="full_time">Full Time</option>
+				<option value="part_time">Part Time</option>
+				<option value="contract">Contract</option>
+				<option value="freelance">Freelance</option>
+			</select>
+			<select id="skills" name="skills[]" multiple="multiple" size="3">
+				<option value="select_label" disabled="disabled">Select job skills... (select many)</option>
+				<option value="php">PHP</option>
+				<option value="javascript">Java Script</option>
+				<option value="jquery">jQuery</option>
+				<option value="html_css">HTML, CSS</option>
+				<option value="java">Java</option>
+				<option value="Web Services">Web Services</option>
+			</select>
+		</div>
+		<div id="job_texts">
+			<label for="title">Title</label><br/>
+			<input id="title" name="title" type="text" size="80" value="" /><br/>
+			<label for="reason">Why would someone want this job? (140 characters)</label><br/>
+			<textarea id="reason" name="reason" rows="2"></textarea><br/>
+			<label for="description">Full description</label><br/>
+			<textarea id="description" name="description" rows="4"></textarea>
+		</div>
+	</fieldset>
+	<input id="is_not_spam" name="is_not_spam" type="checkbox" />
+	<label for="is_not_spam">I promise that this is a real job and is not spam.</label>
+	<input id="approval_button" type="submit" value="Send for approval" disabled="disabled"/>
+</form>

@@ -1,0 +1,30 @@
+<p><a href="/">Home</a> &gt; <span>...</span></p>
+<form method="post"
+	action="<?php echo $this->url(array('controller'=>'index', 'action'=>'add'))?>">
+<input type="submit" id="postJob" value="Post a job" /></form>
+
+<?php $num_jobs = count($this->jobs) ?>
+
+<?php if ($num_jobs > 0): ?>
+<table id="jobs_table">
+	<thead>
+		<tr class="soft_background">
+			<th>Job</th>
+			<th>Skills</th>
+		</tr>
+	</thead>
+	<tbody>
+		<?php $row_counter = 0; ?>
+		<?php foreach ($this->jobs as $job): ?>
+		<tr class="<?php if ($row_counter % 2 == 0): { echo 'light_gray_background'; }; endif; ?>">
+			<td class="job_column"><a href="<?php echo $this->url(array("controller"=>"index", "action"=>"get", "id"=>$job->id)) ?>"><?php echo $job->title?></a><br />
+				<?php echo $job->description ?></td>
+			<td class="skills_column"><?php echo $job->skills ?></td>
+		</tr>
+		<?php $row_counter++; ?>
+		<?php endforeach;?>
+	</tbody>
+</table>
+<?php endif; ?>
+
+<p><?= $num_jobs == 0 ? 'No' : $num_jobs; ?> job<?= ($num_jobs == 0 || $num_jobs > 1) ? 's' : ''?> shown</p>
