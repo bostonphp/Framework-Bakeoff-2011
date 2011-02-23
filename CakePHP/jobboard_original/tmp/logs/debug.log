@@ -1,0 +1,2 @@
+2011-02-22 19:04:35 Notice: Notice (8): session_start() [<a href='http://php.net/function.session-start'>function.session-start</a>]: ps_files_cleanup_dir: opendir(/var/lib/php5) failed: Permission denied (13) in [/usr/share/php/cake/libs/cake_session.php, line 588]
+2011-02-22 19:15:56 Notice: Notice (8): session_start() [<a href='http://php.net/function.session-start'>function.session-start</a>]: ps_files_cleanup_dir: opendir(/var/lib/php5) failed: Permission denied (13) in [/usr/share/php/cake/libs/cake_session.php, line 588]

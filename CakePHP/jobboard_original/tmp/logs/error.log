@@ -1,0 +1,3 @@
+2011-02-22 19:15:56 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at /usr/share/php/cake/libs/debugger.php:673) in [/usr/share/php/cake/libs/controller/controller.php, line 746]
+2011-02-22 19:26:08 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1048: Column 'job_type' cannot be null</span> in [/usr/share/php/cake/libs/model/datasources/dbo_source.php, line 681]
+2011-02-22 19:30:46 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1048: Column 'job_type' cannot be null</span> in [/usr/share/php/cake/libs/model/datasources/dbo_source.php, line 681]
