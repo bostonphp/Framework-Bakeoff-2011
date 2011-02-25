@@ -50,7 +50,11 @@
  *
  */
 	if (!defined('CAKE_CORE_INCLUDE_PATH')) {
-		define('CAKE_CORE_INCLUDE_PATH',  DS . 'usr' . DS . 'share' . DS . 'php');
+        //Added - this links to the Cake library committed with the project
+        define('CAKE_CORE_INCLUDE_PATH',  ROOT . DS . 'cake');
+		
+        //Original - allows sharing a common cake library with all your apps
+        //define('CAKE_CORE_INCLUDE_PATH',  DS . 'usr' . DS . 'share' . DS . 'php');
 	}
 
 /**
