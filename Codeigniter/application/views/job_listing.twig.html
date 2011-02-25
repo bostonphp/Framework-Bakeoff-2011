@@ -1,0 +1,17 @@
+{% extends "base.twig.html" %}
+
+{% block content %}
+	{% autoescape false %}
+		{{ mailto(job['poster_email'], "Apply") }}
+	{% endautoescape %}
+	<h2>{{ job['title'] }}</h2>
+	<h3><b>Posted by</b> {{ job['poster_name'] }} of {{ job['poster_company'] }} on {{ job['post_date'] }}</h3>
+	<h3>{{ job['tagline'] }}</h3>
+	{% if job['keywords'] is not empty %}
+		Tags: {% for keyword in job['keywords'] %}
+			{{ keyword }}{% if not loop.last %}&nbsp;,&nbsp;{% endif %}
+		{% endfor %}
+	{% endif %}
+	<h4>Full job profile:</h4>
+	{{ job['description'] }}
+{% endblock %}

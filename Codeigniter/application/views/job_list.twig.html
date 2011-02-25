@@ -1,0 +1,65 @@
+{% extends "base.twig.html" %}
+
+{% block content %}
+<form action="jobs/list_filter" method="post">
+	<select name="type">
+		{% if type == "all" %}
+			<option value="all" selected>All Jobs</option>
+		{% else %}
+			<option value="all">All Jobs</option>
+		{% endif %}
+		{% if type == "FULL_TIME" %}
+			<option value="FULL_TIME" selected>Full Time</option>
+		{% else %}
+			<option value="FULL_TIME">Full Time</option>
+		{% endif %}
+		{% if type == "PART_TIME" %}
+			<option value="PART_TIME" selected>Part Time</option>
+		{% else %}
+			<option value="PART_TIME">Part Time</option>
+		{% endif %}
+		{% if type == "CONTRACT" %}
+			<option value="CONTRACT" selected>Contract</option>
+		{% else %}
+			<option value="CONTRACT">Contract</option>
+		{% endif %}
+		{% if type == "FREELANCE" %}
+			<option value="FREELANCE" selected>Freelance</option>
+		{% else %}
+			<option value="FREELANCE">Freelance</option>
+		{% endif %}
+	</select>
+	<input type="submit" value="Filter" />
+</form>
+<a href="{{ site_url('jobs/post') }}">Post a job</a>
+{% if search_term is defined %}
+<p>
+	You searched for <em>{{ search_term }}</em>. <a href="{{ site_url() }}">View all jobs.</a>
+</p>
+{% endif %}
+<table>
+	<thead>
+		<tr>
+			<td>
+				Job
+			</td>
+			<td>
+				Skill Keywords
+			</td>
+		</tr>
+	</thead>
+	{% for job in jobs %}
+		<tr>
+			<td>
+				<a href="{{ site_url('jobs/view/' ~ job['id']) }}">{{ job['title'] }}</a>
+			</td>
+			<td>
+				{% for keyword in job['keywords'] %}
+					{{ keyword }}{% if not loop.last %}, {% endif %}
+				{% endfor %}
+			</td>
+		</tr>
+	{% endfor %}
+</table>
+{{ job_count }} jobs found.
+{% endblock %}

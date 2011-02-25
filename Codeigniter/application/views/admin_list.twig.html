@@ -1,0 +1,48 @@
+{% extends "base.twig.html" %}
+
+{% block content %}
+	{% if records is empty %}
+		<p><b>No jobs found.</b></p>
+	{% else %}
+		<table>
+			<thead>
+				<tr>
+					<td>
+						Title
+					</td>
+					<td>
+						Approved?
+					</td>
+					<td>
+						Actions
+					</td>
+				</tr>
+			</thead>
+			{% for record in records %}
+				<tr class="{{ cycle(['odd', 'even'], loop.index) }}">
+					<td>
+						<a href="{{ site_url('jobs/view/' ~ record['id']) }}">{{ record['title'] }}</a>
+					</td>
+					<td>
+						{{ record['approved'] }}
+					</td>
+					<td>
+						<form method="post" action="{{ site_url('admin/approve') }}">
+							<input type="hidden" name="id" value="{{ record['id'] }}" />
+							{% if record['approved'] == 'YES' %}
+								<input type="submit" value="Unapprove" />
+							{% else %}
+								<input type="submit" value="Approve" />
+							{% endif %}
+						</form>
+						<form method="post" action="{{ site_url('admin/delete') }}">
+							<input type="hidden" name="id" value="{{ record['id'] }}" />
+							<input type="submit" value="Delete" />
+						</form>
+					</td>
+				</tr>
+			{% endfor %}
+		</table>
+	{% endif %}
+
+{% endblock %}

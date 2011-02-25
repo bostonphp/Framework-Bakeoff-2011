@@ -1,0 +1,64 @@
+{% extends "base.twig.html" %}
+
+{% block content %}
+{% if errors is not empty %}
+	<p><b>Some errors were found in your input:</b></p>
+	<ul class="form_errors">
+		{% autoescape false %}
+			{{ errors }}
+		{% endautoescape %}
+	</ul>
+{% endif %}
+
+<form method="post" action="{{ site_url('jobs/post_action') }}">
+	<fieldset name="poster_information">
+		<legend>Your information</legend>
+		<label for="poster_name">Your name</label>
+		<input type="text" name="poster_name" value="{{ last['poster_name'] }}" />
+		<label for="poster_company">Your company</label>
+		<input type="text" name="poster_company" value="{{ last['poster_company'] }}" />
+		<label for="poster_email">Your email</label>
+		<input type="text" name="poster_email" value="{{ last['poster_email'] }}" />
+		<label for="poster_location">Job location (City, ST)</label>
+		<input type="text" name="poster_location" value="{{ last['poster_location'] }}" />
+	</fieldset>
+	<fieldset name="job_info">
+		<legend>Job info</legend>
+		<label for="type">Job type</label>
+		<select name="type">
+			{% if last['type'] == "FULL_TIME" %}
+				<option value="FULL_TIME" selected>Full Time</option>
+			{% else %}
+				<option value="FULL_TIME">Full Time</option>
+			{% endif %}
+			{% if last['type'] == "PART_TIME" %}
+				<option value="PART_TIME" selected>Part Time</option>
+			{% else %}
+				<option value="PART_TIME">Part Time</option>
+			{% endif %}
+			{% if last['type'] == "CONTRACT" %}
+				<option value="CONTRACT" selected>Contract</option>
+			{% else %}
+				<option value="CONTRACT">Contract</option>
+			{% endif %}
+			{% if last['type'] == "FREELANCE" %}
+				<option value="FREELANCE" selected>Freelance</option>
+			{% else %}
+				<option value="FREELANCE">Freelance</option>
+			{% endif %}
+		</select>
+		<label for="keywords">Keywords (comma separated)</label>
+		<input type="text" name="keywords" value="{{ last['keywords'] }}" />
+		<label for="title">Title</label>
+		<input type="text" name="title" value="{{ last['title'] }}" />
+		<label for="tagline">Why would someone want this job? (140 characters)</label>
+		<input type="text" name="tagline" maxlength="140" value="{{ last['tagline'] }}" />
+		<label for="description">Full description</label>
+		<textarea name="description">{{ last['description'] }}</textarea>
+	</fieldset>
+	<input type="checkbox" name="verify" value="true" />
+	<label for="verify">I promise that this is a real job and isn't just a spam post!</label>
+
+	<input type="submit" value="Send for approval" />
+</form>
+{% endblock %}
