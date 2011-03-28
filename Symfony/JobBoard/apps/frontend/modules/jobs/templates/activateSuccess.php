@@ -1,0 +1,1 @@
+You have successfully activated the job: <?php echo $job->getTitle() ?>

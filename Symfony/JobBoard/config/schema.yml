@@ -1,0 +1,34 @@
+propel:
+  _attributes:      { package: lib.model }
+
+  categories:
+    _attributes: { phpName: Category }
+    id:           ~
+    name:         { type: varchar(255), required: true, index: unique }
+    created_at:   ~
+    updated_at:   ~
+
+  jobs:
+    _attributes: { phpName: Job }
+    id:           ~
+    name:         { type: varchar(255), required: true }
+    location:     { type: varchar(255), required: false }
+    company:      { type: varchar(255), required: true }
+    email:        { type: varchar(255), required: true }
+    category_id:  { type: integer, foreignTable: categories, foreignReference: id, required: true }
+    title:        { type: varchar(255) }
+    keywords:     { type: varchar(255) }
+    position:     { type: longvarchar }
+    description:  { type: longvarchar }
+    token:        { type: varchar(255), required: false, index: unique }
+    is_activated: { type: boolean, required: true, default: 0 }
+    agree_terms:  { type: boolean, required: true, default: 0 }
+    expires_at:   { type: timestamp }
+    created_at:   ~
+    updated_at:   ~
+
+  job_index:
+    _attribute: { phpName: JobIndex }
+    term: { type: varchar(255), required: true }
+    job_id: { type: integer, foreignTable: jobs, foreignReference: id, required: true }
+    

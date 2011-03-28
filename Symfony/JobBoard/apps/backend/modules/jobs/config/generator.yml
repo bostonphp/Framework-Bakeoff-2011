@@ -1,0 +1,23 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           Job
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              Job
+    plural:                Jobs
+    route_prefix:          job
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~ 
+      list:    
+        display: [=name, company, title, agree_terms, expires_at, created_at]
+      filter:  ~
+      form:    ~
+      edit:    ~
+      new:     ~
+  
